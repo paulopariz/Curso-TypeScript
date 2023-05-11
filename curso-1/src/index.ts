@@ -256,8 +256,99 @@ class User {
         this.role = role
         this.isApproved = isApproved
     }
+
+    showUserName() {
+        console.log(`O nome do usuario é ${this.name}`)
+    }
+    showUserRole(canShow: boolean) {
+        if (canShow) {
+            console.log(`Idade do usuario é: ${this.role}`)
+            return
+        }
+        console.log("Informacao restrita")
+    }
 }
 
 const person = new User("Paulo", 19, "Admin", true)
 
 console.log(person)
+
+person.showUserName()
+
+person.showUserRole(false)
+
+
+
+
+
+
+// interfaces em classes
+interface IVehicle {
+    brand: string
+    showBrand(): void
+}
+
+class Car implements IVehicle {
+    brand
+    wheels
+
+    constructor(brand: string, wheels: number) {
+        this.brand = brand
+        this.wheels = wheels
+    }
+
+    showBrand(): void {
+        console.log(`A marca do carro é: ${this.brand}`)
+    }
+}
+
+const fusca = new Car("VW", 4)
+fusca.showBrand()
+
+
+
+
+
+
+// herenca
+class SuperCar extends Car {
+    engine
+
+    constructor(brand: string, wheels: number, engine: number) {
+        super(brand, wheels)
+        this.engine = engine
+    }
+}
+
+const a4 = new SuperCar("Audi", 4, 2.0)
+
+console.log(a4)
+a4.showBrand()
+
+
+
+
+
+
+// decorators
+function BaseParamters() {
+    return function <T extends { new(...args: any[]): {} }>(constructor: T) {
+        return class extends constructor {
+            id = Math.random()
+            createdAt = new Date()
+        }
+    }
+}
+
+@BaseParamters()
+
+class Person {
+    name
+    constructor(name: string) {
+        this.name = name
+    }
+}
+
+const sam = new Person("Sam")
+
+console.log(sam)
