@@ -148,7 +148,7 @@ teste = null
 
 
 // funcoes
-function sum(a: number, b: number){
+function sum(a: number, b: number) {
     return a + b
 }
 console.log(sum(12, 12))
@@ -159,16 +159,105 @@ function sayHelloTo(name: string): string {
 }
 console.log(sayHelloTo("Paulo"))
 
-function logger(msg: string): void{
+function logger(msg: string): void {
     console.log(msg)
 }
 logger("Teste")
 
-function greeting(name: string, greet?: string): void{
-    if(greet){
+function greeting(name: string, greet?: string): void {
+    if (greet) {
         console.log(`Olá ${greet} ${name}`)
         return
     }
     console.log(`Ola ${name}`)
 }
 greeting("José", "Sir")
+
+
+
+
+
+
+
+// interfaces
+interface MathFunctionParams {
+    n1: number,
+    n2: number
+}
+
+function sumNumbers(nums: MathFunctionParams) {
+    return nums.n1 + nums.n2
+}
+
+console.log(sumNumbers({ n1: 1, n2: 2 }))
+
+function multiplyNumbers(nums: MathFunctionParams) {
+    return nums.n1 * nums.n2
+}
+
+const someNumbers: MathFunctionParams = {
+    n1: 5,
+    n2: 10
+}
+
+console.log(multiplyNumbers(someNumbers))
+
+
+
+
+
+
+
+// narrowing 
+//checagemde tipos
+function doSomething(info: number | boolean) {
+    if (typeof info === "number") {
+        console.log(`O numero é ${info}`)
+        return
+    }
+    console.log("Não foi passado um numero")
+}
+
+doSomething(5)
+doSomething(true)
+
+
+
+
+
+// generics
+function showArraysItems<T>(arr: T[]) {
+    arr.forEach((item) => {
+        console.log(`Item: ${item}`)
+    })
+}
+
+const a1 = [1, 2, 3]
+const a2 = ["a", "b", "c"]
+
+showArraysItems(a1)
+showArraysItems(a2)
+
+
+
+
+
+
+// classes
+class User {
+    name
+    age
+    role
+    isApproved
+
+    constructor(name: string, age: number, role: string, isApproved: boolean) {
+        this.name = name
+        this.age = age
+        this.role = role
+        this.isApproved = isApproved
+    }
+}
+
+const person = new User("Paulo", 19, "Admin", true)
+
+console.log(person)

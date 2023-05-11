@@ -93,3 +93,51 @@ function greeting(name, greet) {
     console.log(`Ola ${name}`);
 }
 greeting("José", "Sir");
+function sumNumbers(nums) {
+    return nums.n1 + nums.n2;
+}
+console.log(sumNumbers({ n1: 1, n2: 2 }));
+function multiplyNumbers(nums) {
+    return nums.n1 * nums.n2;
+}
+const someNumbers = {
+    n1: 5,
+    n2: 10
+};
+console.log(multiplyNumbers(someNumbers));
+// narrowing 
+//checagemde tipos
+function doSomething(info) {
+    if (typeof info === "number") {
+        console.log(`O numero é ${info}`);
+        return;
+    }
+    console.log("Não foi passado um numero");
+}
+doSomething(5);
+doSomething(true);
+// generics
+function showArraysItems(arr) {
+    arr.forEach((item) => {
+        console.log(`Item: ${item}`);
+    });
+}
+const a1 = [1, 2, 3];
+const a2 = ["a", "b", "c"];
+showArraysItems(a1);
+showArraysItems(a2);
+// classes
+class User {
+    name;
+    age;
+    role;
+    isApproved;
+    constructor(name, age, role, isApproved) {
+        this.name = name;
+        this.age = age;
+        this.role = role;
+        this.isApproved = isApproved;
+    }
+}
+const person = new User("Paulo", 19, "Admin", true);
+console.log(person);
