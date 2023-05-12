@@ -36,3 +36,25 @@ console.log(objeto)
 function soma(a: number, b: number): number {
     return a + b
 }
+
+
+// const soma2 = (a: string, b: string): number => a + b
+const soma2 = (a: string, b: string): string => a + b
+
+
+
+
+
+
+//UNIONS E TYPE ALIAS
+type Id = number | string
+
+let id: Id
+
+let id1: Id
+let id2: Id
+
+
+type Usuario = { nome: string, idade: number }
+
+let user: Usuario
