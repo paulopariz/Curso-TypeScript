@@ -72,3 +72,48 @@ let myUser: IUsuario
 
 interface Props { }
 
+
+
+
+
+
+// EXTENDENDO INTERFACES E TIPOS
+type Pessoa = {
+    nome: string
+    idade: number
+}
+
+
+interface Aluno extends Pessoa {
+    curso: string
+    ira: number
+}
+
+let myAluno: Aluno
+
+
+
+
+
+
+//PROPRIEDADE OPCIONAS
+type Person = {
+    name: string
+    age: number
+    car?: string
+}
+
+type PersonTwo = Person & {
+    course: string
+    ira: number
+}
+
+let person: PersonTwo
+// person = { name: "Paulo", age: 19, course: "ADS", ira: 4.1 }
+person = {
+    name: "Paulo",
+    age: 19,
+    course: "ADS",
+    ira: 4.1,
+    car: "ferrari"
+}
