@@ -58,3 +58,16 @@ let id2: Id
 type Usuario = { nome: string, idade: number }
 
 let user: Usuario
+
+
+// INTERFACES
+type TUsuario = { nome: string, idade: number }
+
+interface IUsuario {
+    nome: string
+    idade: number
+}
+
+let myUser: IUsuario
+
+interface Props { }
