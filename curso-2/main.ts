@@ -17,3 +17,13 @@ lista = ["abc", "123"]
 let aluno: [string, number, boolean]
 // aluno = [true, "paulo", 19]
 aluno = ["paulo", 19, true]
+
+
+
+
+
+//OBJETOS
+let objeto: { nome: string, idade: number, x: boolean }
+objeto = { nome: 'paulo', idade: 19, x: true }
+
+console.log(objeto)
