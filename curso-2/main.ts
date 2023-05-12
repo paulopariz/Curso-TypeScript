@@ -27,3 +27,12 @@ let objeto: { nome: string, idade: number, x: boolean }
 objeto = { nome: 'paulo', idade: 19, x: true }
 
 console.log(objeto)
+
+
+
+
+
+//FUNCOES
+function soma(a: number, b: number): number {
+    return a + b
+}
