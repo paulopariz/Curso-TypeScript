@@ -96,6 +96,7 @@ let myAluno: Aluno
 
 
 
+
 //PROPRIEDADE OPCIONAS
 type Person = {
     name: string
@@ -117,3 +118,43 @@ person = {
     ira: 4.1,
     car: "ferrari"
 }
+
+
+
+
+
+
+
+
+//GENERICS
+interface MyPessoa<T = MyAluno> {
+    nome: string
+    idade: number
+    profissao: T
+}
+
+type MyAluno = {
+    matricula: string
+}
+
+interface Engenheiro {
+    crea: string
+}
+
+interface Medico {
+    crm: string
+}
+
+
+let medico: MyPessoa<Medico>
+let MyAlunoG: MyPessoa
+let engenheiro: MyPessoa<Engenheiro>
+
+// engenheiro.profissao.crea
+// medico.profissao.crm
+
+
+
+type Lista<T = string> = T[]
+
+let myList: Lista
