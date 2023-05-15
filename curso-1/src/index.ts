@@ -352,3 +352,5 @@ class Person {
 const sam = new Person("Sam")
 
 console.log(sam)
+
+
