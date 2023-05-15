@@ -12,6 +12,16 @@ function preencherDados(dados) {
   </div>
   `;
 }
+preencherDados({
+    nome: 'Computador',
+    preco: 2000,
+    teclado: false,
+});
+preencherDados({
+    nome: 'Notebook',
+    preco: 2500,
+    teclado: true,
+});
 function pintarCategoria(categoria) {
     if (categoria === 'design') {
         console.log('Pintar vermelho');

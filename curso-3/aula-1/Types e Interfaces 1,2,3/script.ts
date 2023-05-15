@@ -6,13 +6,20 @@ type NumberOrString = number | string;
 let total1: NumberOrString = 10;
 total1 = '200';
 
-type Produto = {
+interface InterfaceProduto {
+    nome: string;
+    preco: number;
+    teclado: boolean;
+}
+
+type TypeProduto = {
     nome: string;
     preco: number;
     teclado: boolean;
 };
 
-function preencherDados(dados: Produto) {
+
+function preencherDados(dados: TypeProduto) {
     document.body.innerHTML += `
   <div>
     <h2>${dados.nome}</h2>
@@ -21,6 +28,20 @@ function preencherDados(dados: Produto) {
   </div>
   `;
 }
+
+preencherDados({
+    nome: 'Computador',
+    preco: 2000,
+    teclado: false,
+});
+
+preencherDados({
+    nome: 'Notebook',
+    preco: 2500,
+    teclado: true,
+});
+
+
 
 type Categorias = 'design' | 'codigo' | 'descod';
 
