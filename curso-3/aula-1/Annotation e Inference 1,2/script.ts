@@ -63,3 +63,42 @@ function transPreco(produto: { nome: string, preco: string }) {
 const produtoNovo = transPreco(nintendo)
 
 console.log(produtoNovo)
+
+
+
+//EXERCICIO 1
+function normalizarTexto(texto: string) {
+    return texto.trim().toLowerCase()
+}
+
+let texto = normalizarTexto(" DSDsasf ")
+console.log(texto)
+
+
+
+//EXERCICIO 2
+const input = document.querySelector('input');
+
+const total = localStorage.getItem('total');
+if (input && total) {
+    input.value = total;
+    calcularGanho(Number(input.value));
+}
+
+function calcularGanho(value: number) {
+    const p = document.querySelector('p');
+    if (p) {
+        p.innerText = `ganho total: ${value + 100 - value * 0.2}`;
+    }
+}
+
+function totalMudou() {
+    if (input) {
+        localStorage.setItem('total', input.value);
+        calcularGanho(Number(input.value));
+    }
+}
+
+if (input) {
+    input.addEventListener('keyup', totalMudou);
+}
