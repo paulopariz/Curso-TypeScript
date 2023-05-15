@@ -1,0 +1,22 @@
+"use strict";
+//Union Types
+//É comum termos funções que podem retornar ou receber tipos diferentes. Para isso usamos a barra vertical string | number | boolean.
+let mytotal = 200;
+mytotal = "400";
+console.log(typeof mytotal + " " + mytotal);
+//Funções
+//Funções podem receber parâmetros com diferentes tipos e também podem retornar diferentes tipos de dados.
+function isNumber(value) {
+    if (typeof value === 'number') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+if (isNumber("200")) {
+    console.log("é um numero");
+}
+else {
+    console.log("nao é um numero");
+}
