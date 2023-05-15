@@ -20,3 +20,23 @@ if (isNumber("200")) {
 else {
     console.log("nao é um numero");
 }
+//DOM
+//Funções que selecionam elementos do DOM geralmente retornam null como uma possibilidade de tipo, pois o TypeScript não tem acesso prévio ao DOM para saber se o elemento existe ou não.
+// Retorna HTMLButtonElement | null
+const button = document.querySelector('button');
+// Optional chaining
+// Executa click() se button for diferente de null/undefined
+button?.click();
+//EXERCICIO
+function toNumber(value) {
+    if (typeof value === 'number') {
+        return value;
+    }
+    else if (typeof value === 'string') {
+        return Number(value);
+    }
+    else {
+        throw "Value deve ser um number ou string";
+    }
+}
+console.log(toNumber("200"));
