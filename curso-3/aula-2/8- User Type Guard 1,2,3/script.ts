@@ -25,15 +25,105 @@ function handleCursos(data: unknown) {
 
 //Com o Type Predicate :arg is type, podemos indicar qual o tipo de argumento uma função booleana (que retorna boolean) recebeu para ser verdadeira
 
-function isString(value: unknown): value is string {
+function isStringg(value: unknown): value is string {
     return typeof value === 'string';
 }
 
-function handleData(data: unknown) {
-    if (isString(data)) {
+function handleDataa(data: unknown) {
+    if (isStringg(data)) {
         data.toUpperCase();
     }
 }
 
-handleData('Origamid');
-handleData(200);
+handleDataa('Origamid');
+handleDataa(200);
+
+
+
+
+//Objetos
+//O Type Predicate pode ser especialmente utilizado para criarmos Type Guards para objetos específicos e garantirmos a Type Safety (segurança) do projeto.
+
+async function fetchProduto() {
+    const response = await fetch('https://api.origamid.dev/json/notebook.json');
+    const json = await response.json();
+    handleProduto(json);
+}
+fetchProduto();
+
+interface Produto2 {
+    nome: string;
+    preco: number;
+}
+
+function isProduto(value: unknown): value is Produto2 {
+    if (
+        value &&
+        typeof value === 'object' &&
+        'nome' in value &&
+        'preco' in value
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function handleProduto(data: unknown) {
+    if (isProduto(data)) {
+        console.log(data);
+    }
+}
+
+
+
+
+//EXERCICIOS
+async function fetchCursos3() {
+    const response = await fetch('https://api.origamid.dev/json/cursos.json');
+    const json = await response.json();
+    handleCursos3(json);
+}
+fetchCursos3();
+
+interface Curso {
+    nome: string;
+    horas: number;
+    aulas: number;
+    gratuito: boolean;
+    tags: string[];
+    idAulas: number[];
+    nivel: 'iniciante' | 'avancado';
+}
+
+function isCurso(curso: unknown): curso is Curso {
+    if (
+        curso &&
+        typeof curso === 'object' &&
+        'nome' in curso &&
+        'horas' in curso &&
+        'tags' in curso
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function handleCursos3(data: unknown) {
+    if (Array.isArray(data)) {
+        data.filter(isCurso).forEach((item) => {
+            document.body.innerHTML += `
+            <br>
+            <br>
+            <br>
+            <br>
+          <section>
+            <h2>${item.nome}</h2>
+            <p>${item.horas}</p>
+            <p>${item.tags.join(', ')}</p>
+          </section>
+        `;
+        });
+    }
+}

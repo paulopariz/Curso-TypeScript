@@ -19,13 +19,73 @@ function handleCursos(data) {
 //TypeScript não executa JavaScript
 //Sabemos já que o TS não executa o JS durante a checagem dos tipos. Se isso ocorre, então como a função isArray consegue ser usada como Type Guard?
 //Com o Type Predicate :arg is type, podemos indicar qual o tipo de argumento uma função booleana (que retorna boolean) recebeu para ser verdadeira
-function isString(value) {
+function isStringg(value) {
     return typeof value === 'string';
 }
-function handleData(data) {
-    if (isString(data)) {
+function handleDataa(data) {
+    if (isStringg(data)) {
         data.toUpperCase();
     }
 }
-handleData('Origamid');
-handleData(200);
+handleDataa('Origamid');
+handleDataa(200);
+//Objetos
+//O Type Predicate pode ser especialmente utilizado para criarmos Type Guards para objetos específicos e garantirmos a Type Safety (segurança) do projeto.
+async function fetchProduto() {
+    const response = await fetch('https://api.origamid.dev/json/notebook.json');
+    const json = await response.json();
+    handleProduto(json);
+}
+fetchProduto();
+function isProduto(value) {
+    if (value &&
+        typeof value === 'object' &&
+        'nome' in value &&
+        'preco' in value) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function handleProduto(data) {
+    if (isProduto(data)) {
+        console.log(data);
+    }
+}
+//EXERCICIOS
+async function fetchCursos3() {
+    const response = await fetch('https://api.origamid.dev/json/cursos.json');
+    const json = await response.json();
+    handleCursos3(json);
+}
+fetchCursos3();
+function isCurso(curso) {
+    if (curso &&
+        typeof curso === 'object' &&
+        'nome' in curso &&
+        'horas' in curso &&
+        'tags' in curso) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function handleCursos3(data) {
+    if (Array.isArray(data)) {
+        data.filter(isCurso).forEach((item) => {
+            document.body.innerHTML += `
+            <br>
+            <br>
+            <br>
+            <br>
+          <section>
+            <h2>${item.nome}</h2>
+            <p>${item.horas}</p>
+            <p>${item.tags.join(', ')}</p>
+          </section>
+        `;
+        });
+    }
+}
