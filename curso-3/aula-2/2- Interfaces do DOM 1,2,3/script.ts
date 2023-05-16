@@ -29,3 +29,26 @@ links.forEach((link) => {
 const anchorLinks = Array.from(links).filter(
     (link) => link instanceof HTMLAnchorElement,
 );
+
+
+
+
+
+
+
+
+//EXERCICIO
+const links1 = document.querySelectorAll('.link');
+
+function ativarElemento(elemento: HTMLElement) {
+    elemento.style.color = "red"
+    elemento.style.border = "2px solid red"
+}
+
+
+links.forEach((item) => {
+    // console.dir(item.__proto__.__proto__)
+    if (item instanceof HTMLElement) {
+        ativarElemento(item);
+    }
+});

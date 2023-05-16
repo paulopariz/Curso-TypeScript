@@ -21,3 +21,15 @@ links.forEach((link) => {
 // const anchorLinks = links.filter((link) => link instanceof HTMLAnchorElement);
 // Funciona, pois a NodeList foi transformada em uma Array
 const anchorLinks = Array.from(links).filter((link) => link instanceof HTMLAnchorElement);
+//EXERCICIO
+const links1 = document.querySelectorAll('.link');
+function ativarElemento(elemento) {
+    elemento.style.color = "red";
+    elemento.style.border = "2px solid red";
+}
+links.forEach((item) => {
+    // console.dir(item.__proto__.__proto__)
+    if (item instanceof HTMLElement) {
+        ativarElemento(item);
+    }
+});
