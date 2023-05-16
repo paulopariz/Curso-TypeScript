@@ -1,11 +1,11 @@
 //Functions
 //A interface de uma função é definida durante a sua declaração.
 
-function somar(a: number, b: number, c?: number): number {
+function somarr(a: number, b: number, c?: number): number {
     return a + b + (c ? c : 0)
 }
 
-somar(1, 2, 3)
+somarr(1, 2, 3)
 
 const subtrair = (a: number, b: number) => a - b
 subtrair(4, 3)
@@ -81,9 +81,9 @@ function calcular(forma: Quadrado) { }
 //O Overload deve ser compatível com a função original.
 
 // Exemplo 1
-function normalizar(valor: string): string;
-function normalizar(valor: string[]): string[];
-function normalizar(valor: string | string[]): string | string[] {
+function normalizarr(valor: string): string;
+function normalizarr(valor: string[]): string[];
+function normalizarr(valor: string | string[]): string | string[] {
     if (typeof valor === "string") {
         return valor.trim().toLowerCase();
     } else {
@@ -91,21 +91,21 @@ function normalizar(valor: string | string[]): string | string[] {
     }
 }
 
-normalizar(" Produto ");
-normalizar(["Banana ", " UVA"]);
+normalizarr(" Produto ");
+normalizarr(["Banana ", " UVA"]);
 
 // Exemplo 2
-function $(seletor: "video"): HTMLVideoElement | null;
-function $(seletor: "div"): HTMLDivElement | null;
-function $(seletor: "a"): HTMLAnchorElement | null;
-function $(seletor: string): Element | null;
-function $(seletor: string): Element | null {
+function a(seletor: "video"): HTMLVideoElement | null;
+function a(seletor: "div"): HTMLDivElement | null;
+function a(seletor: "a"): HTMLAnchorElement | null;
+function a(seletor: string): Element | null;
+function a(seletor: string): Element | null {
     return document.querySelector(seletor);
 }
 
-$("a")?.href;
-$("video")?.volume;
-$(".teste")?.innerHTML;
+a("a")?.href;
+a("video")?.volume;
+a(".teste")?.innerHTML;
 
 
 

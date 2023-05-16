@@ -1,10 +1,10 @@
 "use strict";
 //Functions
 //A interface de uma função é definida durante a sua declaração.
-function somar(a, b, c) {
+function somarr(a, b, c) {
     return a + b + (c ? c : 0);
 }
-somar(1, 2, 3);
+somarr(1, 2, 3);
 const subtrair = (a, b) => a - b;
 subtrair(4, 3);
 //Void
@@ -31,7 +31,7 @@ if (isString('teste')) {
     console.log('É string');
 }
 function calcular(forma) { }
-function normalizar(valor) {
+function normalizarr(valor) {
     if (typeof valor === "string") {
         return valor.trim().toLowerCase();
     }
@@ -39,14 +39,14 @@ function normalizar(valor) {
         return valor.map((item) => item.trim().toLowerCase());
     }
 }
-normalizar(" Produto ");
-normalizar(["Banana ", " UVA"]);
-function $(seletor) {
+normalizarr(" Produto ");
+normalizarr(["Banana ", " UVA"]);
+function a(seletor) {
     return document.querySelector(seletor);
 }
-$("a")?.href;
-$("video")?.volume;
-$(".teste")?.innerHTML;
+a("a")?.href;
+a("video")?.volume;
+a(".teste")?.innerHTML;
 function arredondar(valor) {
     if (typeof valor === 'number') {
         return Math.ceil(valor);

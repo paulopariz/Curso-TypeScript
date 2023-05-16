@@ -24,18 +24,22 @@ const obj = {
 if ('nome' in obj) {
     console.log('sim');
 }
-async function fethProduto() {
-    const response = await fetch('https://api.origamid.dev/json/notebook.json');
-    const json = await response.json();
-    handleProduto(json);
-}
-function handleProduto(data) {
-    console.log(data);
-    if ("preco" in data) {
-        document.body.innerHTML += `
-        <p>Nome: ${data.nome}</p>
-        <p>Nome: ${data.preco}</p>
-        `;
-    }
-}
-fethProduto();
+// async function fethProduto() {
+//     const response = await fetch('https://api.origamid.dev/json/notebook.json')
+//     const json = await response.json()
+//     handleProduto(json)
+// }
+// interface Produto {
+//     nome: string;
+//     preco: number
+// }
+// function handleProduto(data: any) {
+//     console.log(data)
+//     if ("preco" in data) {
+//         document.body.innerHTML += `
+//         <p>Nome: ${data.nome}</p>
+//         <p>Nome: ${data.preco}</p>
+//         `
+//     }
+// }
+// fethProduto()
