@@ -30,3 +30,27 @@ function isString(value) {
 if (isString('teste')) {
     console.log('É string');
 }
+//Never
+//O never é utilizado em casos onde a função gera um erro ou termina a aplicação.
+function abortar(mensagem) {
+    throw new Error(mensagem);
+}
+abortar("umm erro ocoreu");
+console.log("tente novamente");
+function calcular(forma) { }
+function normalizar(valor) {
+    if (typeof valor === "string") {
+        return valor.trim().toLowerCase();
+    }
+    else {
+        return valor.map((item) => item.trim().toLowerCase());
+    }
+}
+normalizar(" Produto ");
+normalizar(["Banana ", " UVA"]);
+function $(seletor) {
+    return document.querySelector(seletor);
+}
+$("a")?.href;
+$("video")?.volume;
+$(".teste")?.innerHTML;
