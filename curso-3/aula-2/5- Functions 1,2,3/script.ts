@@ -52,12 +52,12 @@ if (isString('teste')) {
 //Never
 //O never é utilizado em casos onde a função gera um erro ou termina a aplicação.
 
-function abortar(mensagem: string): never {
-    throw new Error(mensagem)
-}
+// function abortar(mensagem: string): never {
+//     throw new Error(mensagem)
+// }
 
-abortar("umm erro ocoreu")
-console.log("tente novamente")
+// abortar("umm erro ocoreu")
+// console.log("tente novamente")
 
 
 
@@ -106,3 +106,19 @@ function $(seletor: string): Element | null {
 $("a")?.href;
 $("video")?.volume;
 $(".teste")?.innerHTML;
+
+
+
+
+//EXERCICIO
+function arredondar(valor: number): number
+function arredondar(valor: string): string
+function arredondar(valor: number | string): number | string {
+    if (typeof valor === 'number') {
+        return Math.ceil(valor)
+    } else {
+        return Math.ceil(Number(valor)).toString()
+    }
+}
+console.log(arredondar(200.23))
+console.log(arredondar('202.23'))
