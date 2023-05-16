@@ -32,3 +32,15 @@ document.documentElement.addEventListener('mousedown', ativarMenu);
 document.documentElement.addEventListener('touchstart', ativarMenu);
 document.documentElement.addEventListener('pointerdown', ativarMenu);
 
+
+
+//this
+//Dentro de uma função, o this faz referência ao objeto que executou a mesma. No JavaScript o this pode ser passado como o primeiro parâmetro da função, mesmo não sendo necessário informar ele durante a execução.
+
+// function ativarMenu(this: HTMLButtonElement, event: MouseEvent) {
+//     console.log(this.innerText);
+//   }
+  
+//   const button = document.querySelector('button');
+//   button?.addEventListener('click', ativarMenu);
+  
