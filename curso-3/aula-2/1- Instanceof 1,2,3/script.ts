@@ -77,3 +77,13 @@ const jogo1: Produto = {
 // Erro
 if (jogo1 instanceof Produto) {
 }
+
+
+
+
+//EXERCICIO
+const link = document.getElementById('origamid');
+
+if (link instanceof HTMLAnchorElement) {
+    link.href = link.href.replace('http://', 'https://');
+}
