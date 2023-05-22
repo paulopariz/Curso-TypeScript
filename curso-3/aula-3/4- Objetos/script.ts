@@ -42,7 +42,7 @@ mostrarQuantidade(produto8);
 
 function mostrarQuantidadePartial(produto: Partial<Produto7>) {
     if (produto.quantidade) {
-        console.log("Patial: " + produto.quantidade + 20);
+        console.log(produto.quantidade + 20);
     }
 }
 
@@ -69,7 +69,7 @@ const artigo: Post = {
     titulo: 'Como aprender HTML',
     visualizacoes: 3000,
     tags: ['Front End', 'HTML'],
-    autor: 'André',
+    autor: 'Paulo',
 };
 
 artigo.autor;

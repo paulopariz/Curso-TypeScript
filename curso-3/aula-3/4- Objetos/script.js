@@ -24,7 +24,7 @@ mostrarQuantidade(produto8);
 //Com o Partial<Tipo>, podemos indicar que todas as propriedades da interface passada em Tipo, são opcionais.
 function mostrarQuantidadePartial(produto) {
     if (produto.quantidade) {
-        console.log("Patial: " + produto.quantidade + 20);
+        console.log(produto.quantidade + 20);
     }
 }
 mostrarQuantidadePartial(produto7);
@@ -34,7 +34,7 @@ const artigo = {
     titulo: 'Como aprender HTML',
     visualizacoes: 3000,
     tags: ['Front End', 'HTML'],
-    autor: 'André',
+    autor: 'Paulo',
 };
 artigo.autor;
 artigo.descricao;
