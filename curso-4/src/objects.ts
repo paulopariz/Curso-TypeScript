@@ -22,3 +22,23 @@ const user: User = {
 
 const printLog = (message: string) => { }
 printLog(user.password!)
+
+
+
+
+
+
+
+//UNIONS
+type Author = {
+    books: string[]
+}
+
+const author: Author & User = {
+    age: 1,
+    books: ["1"],
+    email: "paulo@gmail.com",
+    firstName: "Paulo",
+    orders: [],
+    password: "asubudf"
+}

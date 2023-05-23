@@ -7,3 +7,11 @@ const user = {
 };
 const printLog = (message) => { };
 printLog(user.password);
+const author = {
+    age: 1,
+    books: ["1"],
+    email: "paulo@gmail.com",
+    firstName: "Paulo",
+    orders: [],
+    password: "asubudf"
+};
