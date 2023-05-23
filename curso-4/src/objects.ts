@@ -42,3 +42,32 @@ const author: Author & User = {
     orders: [],
     password: "asubudf"
 }
+
+
+
+
+
+//Interfaces 
+interface UserInterface {
+    firstName: string
+    email: string
+}
+
+const emailUser: UserInterface = {
+    email: "paulo@gmail.com",
+    firstName: "Paulo",
+}
+
+interface AuthorInterface {
+    books: string[]
+}
+
+const newAuthor: UserInterface & AuthorInterface = {
+    firstName: "Paulo",
+    email: "paulo@gmail.com",
+    books: []
+}
+
+
+type Grade = number | string
+const grade: Grade = 1

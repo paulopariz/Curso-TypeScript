@@ -15,3 +15,13 @@ const author = {
     orders: [],
     password: "asubudf"
 };
+const emailUser = {
+    email: "paulo@gmail.com",
+    firstName: "Paulo",
+};
+const newAuthor = {
+    firstName: "Paulo",
+    email: "paulo@gmail.com",
+    books: []
+};
+const grade = 1;
