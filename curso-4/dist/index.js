@@ -33,3 +33,7 @@ var Direction;
 })(Direction || (Direction = {}));
 const direction = Direction.Down;
 console.log(direction);
+// Type Assertions
+const productName = "Boné";
+// let itemId = productName as string
+let itemId = productName;
