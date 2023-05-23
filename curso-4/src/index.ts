@@ -33,3 +33,22 @@ const people: [number, string][] = [
     [2, "Doe"],
     // ["absc", 3 ]
 ]
+
+
+
+
+// Intersections
+const productId: string | number = 1
+
+
+
+
+// Enum
+enum Direction {
+    Up = 1,
+    Down = 2,
+    Left = "Esquerda"
+}
+
+const direction = Direction.Down
+console.log(direction)

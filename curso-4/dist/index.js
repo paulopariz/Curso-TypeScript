@@ -22,3 +22,14 @@ const people = [
     [2, "Doe"],
     // ["absc", 3 ]
 ];
+// Intersections
+const productId = 1;
+// Enum
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 1] = "Up";
+    Direction[Direction["Down"] = 2] = "Down";
+    Direction["Left"] = "Esquerda";
+})(Direction || (Direction = {}));
+const direction = Direction.Down;
+console.log(direction);
