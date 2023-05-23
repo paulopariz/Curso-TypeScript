@@ -12,3 +12,9 @@ const log = (message) => {
     console.log(message);
     // return message
 };
+const soma = (x, y) => {
+    return x + y;
+};
+const sub = (x, y) => {
+    return x - y;
+};

@@ -10,13 +10,17 @@ type User = {
     email: string
     password?: string
     orders: Order[]
+    register(): string
 }
 
 const user: User = {
     firstName: "Paulo",
     age: 19,
     email: "paulo@gmail.com",
-    orders: [{ productId: "a", price: 10 }]
+    orders: [{ productId: "a", price: 10 }],
+    register() {
+        return "abc"
+    },
 }
 
 
@@ -40,7 +44,11 @@ const author: Author & User = {
     email: "paulo@gmail.com",
     firstName: "Paulo",
     orders: [],
-    password: "asubudf"
+    password: "asubudf",
+    register() {
+        return "sdfsdf"
+    },
+
 }
 
 
@@ -51,11 +59,15 @@ const author: Author & User = {
 interface UserInterface {
     firstName: string
     email: string
+    login(): string
 }
 
 const emailUser: UserInterface = {
     email: "paulo@gmail.com",
     firstName: "Paulo",
+    login() {
+        return "aa"
+    },
 }
 
 interface AuthorInterface {
@@ -65,7 +77,10 @@ interface AuthorInterface {
 const newAuthor: UserInterface & AuthorInterface = {
     firstName: "Paulo",
     email: "paulo@gmail.com",
-    books: []
+    books: [],
+    login() {
+        return "dsf"
+    },
 }
 
 
