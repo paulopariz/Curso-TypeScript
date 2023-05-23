@@ -17,3 +17,19 @@ idk = true
 const ids: number[] = [1, 2, 3, 4, 5, 6, 7]
 const booleans: boolean[] = [true, true, false, true, false]
 const names: string[] = ["Paulo", "Maria", "João"]
+
+
+
+
+
+
+// TUPLA
+const person: [number, string] = [1, "abc"]
+// const person2 : [number, string] = ["abc, 1"]
+
+//Lista de tuplas
+const people: [number, string][] = [
+    [1, "Jane"],
+    [2, "Doe"],
+    // ["absc", 3 ]
+]

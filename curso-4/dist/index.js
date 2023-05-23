@@ -13,3 +13,12 @@ idk = true;
 const ids = [1, 2, 3, 4, 5, 6, 7];
 const booleans = [true, true, false, true, false];
 const names = ["Paulo", "Maria", "João"];
+// TUPLA
+const person = [1, "abc"];
+// const person2 : [number, string] = ["abc, 1"]
+//Lista de tuplas
+const people = [
+    [1, "Jane"],
+    [2, "Doe"],
+    // ["absc", 3 ]
+];
