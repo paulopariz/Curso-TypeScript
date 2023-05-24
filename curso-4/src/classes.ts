@@ -20,4 +20,13 @@ class Person implements IPerson {
     }
 }
 
+
+class PersonRefect {
+    constructor(
+        readonly id: number,
+        protected name: string,
+        private age: number,
+    ) { }
+}
+
 const person2 = new Person(1, "Paulo", 2)
